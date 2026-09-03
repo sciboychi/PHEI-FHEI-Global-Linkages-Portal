@@ -10,7 +10,6 @@ import {
 const AdminUserManagement: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [admins, setAdmins] = useState<any[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   
@@ -31,15 +30,6 @@ const AdminUserManagement: React.FC = () => {
   useEffect(() => {
     fetchAdmins();
   }, []);
-
-  const filteredAdmins = admins.filter(u => {
-    const q = searchTerm.toLowerCase();
-    return (
-      (u.full_name || '').toLowerCase().includes(q) ||
-      (u.email || '').toLowerCase().includes(q) ||
-      (u.institution_name || '').toLowerCase().includes(q)
-    );
-  });
 
   const handleCreateAdmin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -225,13 +215,7 @@ const AdminUserManagement: React.FC = () => {
               </h2>
               <div className="relative w-full md:w-72">
                 <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" />
-                <input 
-                  type="text" 
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Filter command..." 
-                  className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold text-black focus:bg-white outline-none transition-all" 
-                />
+                <input type="text" placeholder="Filter command..." className="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-100 rounded-2xl text-xs font-bold text-black focus:bg-white outline-none transition-all" />
               </div>
             </div>
 
@@ -245,7 +229,7 @@ const AdminUserManagement: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  {filteredAdmins.map((u, i) => (
+                  {admins.map((u, i) => (
                     <tr key={i} className="group hover:bg-gray-50/50 transition-colors">
                       <td className="py-6 px-4">
                         <div className="flex items-center gap-4">

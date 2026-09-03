@@ -85,7 +85,10 @@ const App: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="flex flex-col items-center gap-4">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 animate-pulse" />
+          <div className="flex items-center gap-4">
+            <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 animate-pulse" referrerPolicy="no-referrer" />
+            <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-16 animate-pulse object-contain" referrerPolicy="no-referrer" />
+          </div>
           <div className="w-48 h-1.5 bg-gray-200 rounded-full overflow-hidden relative">
             <div className="absolute top-0 left-0 h-full bg-[#0032a0] animate-progress origin-left w-full"></div>
           </div>
@@ -143,7 +146,8 @@ const App: React.FC = () => {
       <footer className="bg-white border-t border-gray-100 py-12 px-4 mt-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
           <div className="flex items-center gap-4">
-            <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-10" />
+            <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-10" referrerPolicy="no-referrer" />
+            <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-10 object-contain" referrerPolicy="no-referrer" />
             <div>
               <p className="text-[#0032a0] font-black text-sm uppercase tracking-tight leading-none">IAS Portal Gateway</p>
               <p className="text-gray-400 text-[9px] font-bold uppercase tracking-widest">Commission on Higher Education</p>

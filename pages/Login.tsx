@@ -43,7 +43,10 @@ const Login: React.FC = () => {
     <div className="min-h-[calc(100vh-160px)] flex items-center justify-center bg-gray-50 px-4 py-12">
       <div className="max-w-md w-full">
         <div className="text-center mb-10">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 mx-auto mb-6 drop-shadow-sm" />
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 drop-shadow-sm" referrerPolicy="no-referrer" />
+            <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-16 object-contain drop-shadow-sm" referrerPolicy="no-referrer" />
+          </div>
           <h2 className="text-4xl font-black text-gray-900 mb-2 tracking-tighter uppercase">
             Secure Gateway
           </h2>
@@ -109,55 +112,6 @@ const Login: React.FC = () => {
                 </div>
               </div>
 
-              {/* Quick Select Restored Accounts */}
-              <div className="bg-gray-50/80 p-3.5 rounded-2xl border border-gray-100 space-y-2">
-                <p className="text-[9px] font-black text-gray-400 uppercase tracking-wider">Quick Access Restored Accounts:</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {role === 'CHED_ADMIN' ? (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => { setEmail('admin@ched.gov.ph'); setPassword('AdminPass2026!'); }}
-                        className="px-2.5 py-1 bg-white border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:border-[#c8102e] hover:text-[#c8102e] transition-colors"
-                      >
-                        Dir. Santos (IAS)
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setEmail('r.deguzman@ched.gov.ph'); setPassword('AdminPass2026!'); }}
-                        className="px-2.5 py-1 bg-white border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:border-[#c8102e] hover:text-[#c8102e] transition-colors"
-                      >
-                        Atty. De Guzman
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => { setEmail('j.delacruz@up.edu.ph'); setPassword('PHEI_Pass2026!'); }}
-                        className="px-2.5 py-1 bg-white border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:border-[#0032a0] hover:text-[#0032a0] transition-colors"
-                      >
-                        UP Rep (Juan)
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setEmail('m.santos@ateneo.edu'); setPassword('PHEI_Pass2026!'); }}
-                        className="px-2.5 py-1 bg-white border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:border-[#0032a0] hover:text-[#0032a0] transition-colors"
-                      >
-                        Ateneo (Maria)
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => { setEmail('j.rizal@dlsu.edu.ph'); setPassword('PHEI_Pass2026!'); }}
-                        className="px-2.5 py-1 bg-white border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:border-[#0032a0] hover:text-[#0032a0] transition-colors"
-                      >
-                        DLSU (Jose)
-                      </button>
-                    </>
-                  )}
-                </div>
-              </div>
-
               <button 
                 type="submit" 
                 disabled={loading} 
@@ -168,17 +122,57 @@ const Login: React.FC = () => {
               </button>
             </form>
 
-            <div className="pt-6 border-t border-gray-50 text-center">
-              <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest flex items-center justify-center gap-2">
+            <div className="pt-6 border-t border-gray-100">
+              <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3 text-center flex items-center justify-center gap-1.5">
                 <Info size={12} className={role === 'CHED_ADMIN' ? "text-[#c8102e]" : "text-[#0032a0]"} /> 
-                Official accounts are provisioned by IAS Administration.
+                Official Provisioned Credentials
               </p>
+              
+              <div className="flex flex-col gap-2">
+                {role === 'CHED_ADMIN' ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmail('aabeleda@ched.gov.ph');
+                      setPassword('archiepogi392');
+                      setError('');
+                    }}
+                    className="p-3 bg-red-50/60 hover:bg-red-50 border border-red-100 rounded-2xl text-left transition-all group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-black text-[#c8102e] uppercase tracking-wider">CHED Admin</span>
+                      <span className="text-[9px] font-bold text-gray-400 group-hover:text-[#c8102e]">Click to Autofill</span>
+                    </div>
+                    <p className="text-xs font-bold text-gray-800 font-mono mt-0.5">aabeleda@ched.gov.ph</p>
+                    <p className="text-[10px] text-gray-500 font-medium">CHED Central Office - IAS</p>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEmail('archangelabeleda@gmail.com');
+                      setPassword('@rchiepogi392');
+                      setError('');
+                    }}
+                    className="p-3 bg-blue-50/60 hover:bg-blue-50 border border-blue-100 rounded-2xl text-left transition-all group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-black text-[#0032a0] uppercase tracking-wider">Institutional User</span>
+                      <span className="text-[9px] font-bold text-gray-400 group-hover:text-[#0032a0]">Click to Autofill</span>
+                    </div>
+                    <p className="text-xs font-bold text-gray-800 font-mono mt-0.5">archangelabeleda@gmail.com</p>
+                    <p className="text-[10px] text-gray-500 font-medium">University of the Philippines Diliman</p>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-4 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-8" />
+        <div className="mt-8 flex items-center justify-center gap-4 opacity-50 hover:opacity-100 transition-all">
+          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-8" referrerPolicy="no-referrer" />
+          <div className="w-px h-4 bg-gray-400"></div>
+          <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-8 object-contain" referrerPolicy="no-referrer" />
           <div className="w-px h-4 bg-gray-400"></div>
           <p className="text-[8px] font-black uppercase tracking-widest text-gray-500">Republic of the Philippines</p>
         </div>

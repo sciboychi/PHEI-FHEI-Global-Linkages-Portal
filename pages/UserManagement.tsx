@@ -9,7 +9,6 @@ import {
 const UserManagement: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState<any[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   
@@ -28,15 +27,6 @@ const UserManagement: React.FC = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
-
-  const filteredUsers = users.filter(u => {
-    const q = searchTerm.toLowerCase();
-    return (
-      (u.full_name || '').toLowerCase().includes(q) ||
-      (u.email || '').toLowerCase().includes(q) ||
-      (u.institution_name || '').toLowerCase().includes(q)
-    );
-  });
 
   const handleCreateUser = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -171,19 +161,10 @@ const UserManagement: React.FC = () => {
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-[2.5rem] shadow-sm border border-gray-100 p-10 min-h-[600px]">
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-xl font-black text-black">Active Representatives</h2>
-                <p className="text-xs font-medium text-gray-400">Total: {filteredUsers.length} institutional accounts</p>
-              </div>
+              <h2 className="text-xl font-black text-black">Active Representatives</h2>
               <div className="relative w-64 text-black">
                 <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" />
-                <input 
-                  type="text" 
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Filter users..." 
-                  className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-100 rounded-xl text-xs font-bold text-black focus:bg-white outline-none transition-all" 
-                />
+                <input type="text" placeholder="Filter users..." className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-100 rounded-xl text-xs font-bold text-black focus:bg-white outline-none transition-all" />
               </div>
             </div>
 
@@ -198,7 +179,7 @@ const UserManagement: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  {filteredUsers.map((u, i) => (
+                  {users.map((u, i) => (
                     <tr key={i} className="group hover:bg-gray-50 transition-colors">
                       <td className="py-5 px-4">
                         <div className="flex items-center gap-3">

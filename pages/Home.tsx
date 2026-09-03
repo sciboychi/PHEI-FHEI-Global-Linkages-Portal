@@ -114,7 +114,10 @@ const Home: React.FC = () => {
       {/* Footer Branding */}
       <section className="py-20 px-4 bg-white text-center">
         <div className="max-w-3xl mx-auto space-y-8">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 mx-auto grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" />
+          <div className="flex items-center justify-center gap-8">
+            <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer" referrerPolicy="no-referrer" />
+            <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" referrerPolicy="no-referrer" />
+          </div>
           <h2 className="text-[10px] font-black text-gray-300 uppercase tracking-[0.4em]">International Affairs Service • Republic of the Philippines</h2>
         </div>
       </section>

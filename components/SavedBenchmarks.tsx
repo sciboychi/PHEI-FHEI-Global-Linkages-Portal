@@ -29,15 +29,18 @@ const SavedBenchmarks: React.FC<SavedBenchmarksProps> = ({ data, onUpdate, onSel
       {/* Printable Header - Visible only during PDF export */}
       <div className="hidden print:flex items-center justify-between border-b-4 border-[#0032a0] pb-6 mb-10">
         <div className="flex items-center gap-6">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-16" />
+          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED" className="h-16" referrerPolicy="no-referrer" />
           <div>
             <h1 className="text-[#0032a0] font-black text-xl uppercase tracking-tighter">Commission on Higher Education</h1>
             <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em]">International Affairs Service • Institutional Benchmark Report</p>
           </div>
         </div>
-        <div className="text-right">
-          <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Report Date</p>
-          <p className="text-sm font-black text-gray-900">{new Date().toLocaleDateString()}</p>
+        <div className="flex items-center gap-6 text-right">
+          <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-14 object-contain" referrerPolicy="no-referrer" />
+          <div>
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Report Date</p>
+            <p className="text-sm font-black text-gray-900">{new Date().toLocaleDateString()}</p>
+          </div>
         </div>
       </div>
 

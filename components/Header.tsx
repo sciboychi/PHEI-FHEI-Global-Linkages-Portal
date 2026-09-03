@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="border-b border-gray-100 py-3 px-4 md:px-8 flex justify-between items-center bg-gray-50">
         <div className="flex items-center gap-4">
-          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED Logo" className="h-10 md:h-14 object-contain" />
+          <img src="https://i.imgur.com/bT1F0he.png" alt="CHED Logo" className="h-10 md:h-14 object-contain" referrerPolicy="no-referrer" />
           <div className="hidden md:block h-8 w-px bg-gray-300"></div>
           <div className="hidden md:flex flex-col">
             <h1 className="text-[#0032a0] font-black text-sm leading-tight uppercase tracking-tight">Commission on Higher Education</h1>
@@ -30,12 +30,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
           </div>
         </div>
         <div className="flex items-center gap-6">
-          <img 
-            src="https://i.imgur.com/As08aqw.png" 
-            alt="Bagong Pilipinas" 
-            className="h-10 md:h-12 object-contain" 
-            referrerPolicy="no-referrer"
-          />
+          <img src="https://i.imgur.com/As08aqw.png" alt="Bagong Pilipinas" className="h-10 md:h-12 object-contain" referrerPolicy="no-referrer" />
         </div>
       </div>
 
