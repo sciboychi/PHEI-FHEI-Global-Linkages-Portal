@@ -1,0 +1,24 @@
+
+/* Global Styles for PHEI-FHEI Global Linkages Portal */
+@import "tailwindcss";
+
+:root {
+  --ched-blue: #0032a0;
+  --ched-red: #c8102e;
+  --ched-yellow: #fdda25;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .ched-btn-primary {
+    @apply bg-[#0032a0] text-white px-6 py-2 rounded-lg font-bold hover:bg-[#002880] transition-colors shadow-md;
+  }
+}
+
+/* Ensure progress animation works without duplicating index.html style if preferred, 
+   but since it's in index.html already, we just keep index.css for other needs */

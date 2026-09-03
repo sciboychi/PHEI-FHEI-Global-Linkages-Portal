@@ -1,0 +1,11 @@
+{
+  "name": "PHEI-FHEI Global Linkages Portal",
+  "description": "A high-performance directory for international partnerships in Philippine Higher Education, featuring the ACHIEVE filtering system and secure administrative access.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
